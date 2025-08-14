@@ -1,9 +1,10 @@
-# Use official Ollama image
 FROM ollama/ollama:latest
 
-# Expose default Ollama port
+# Expose the Ollama default API port
 EXPOSE 11434
 
-# Default command to start Ollama server
-ENTRYPOINT ["ollama", "serve"]
+# Set the working directory
+WORKDIR /root
 
+# Start the Ollama server
+CMD ["ollama", "serve"]
