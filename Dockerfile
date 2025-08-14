@@ -1,8 +1,7 @@
-# Use the existing Ollama image
 FROM ollama/ollama:latest
 
-# Expose the default Ollama port
+# Expose Ollama default API port
 EXPOSE 11434
 
-# Run the Ollama server
-CMD ["ollama", "serve"]
+# Start the Ollama server and pull the model at runtime
+ENTRYPOINT ["/bin/sh", "-c", "ollama serve & sleep 5 && ollama pull llama3 && wait"]
