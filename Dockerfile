@@ -5,4 +5,5 @@ FROM ollama/ollama:latest
 EXPOSE 11434
 
 # Default command to start Ollama server
-CMD ["serve"]
+ENTRYPOINT ["ollama", "serve"]
+
